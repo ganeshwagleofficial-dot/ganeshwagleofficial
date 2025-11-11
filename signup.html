@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+<div class="container">
+<h1>Sign Up</h1>
+
+<form id="signupForm">
+<label for="category">Select Category:</label>
+<select id="category" required>
+<option value="">--Select--</option>
+<option value="student">Student</option>
+<option value="teacher">Teacher</option>
+<option value="admin">Administrator</option>
+</select>
+
+<label>Name:</label>
+<input type="text" id="name" required />
+
+<label>Address:</label>
+<input type="text" id="address" required />
+
+<label>Email:</label>
+<input type="email" id="email" required />
+
+<label>Date of Birth:</label>
+<input type="date" id="dob" required />
+
+<label>Gender:</label>
+<select id="gender" required>
+<option value="">--Select--</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+
+<div class="buttons">
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+</div>
+</form>
+
+<p id="output"></p>
+<p><a href="login.html" class="back-link">⬅ Back to Login</a></p>
+</div>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let category = document.getElementById("category").value;
+  let name = document.getElementById("name").value.trim();
+  let address = document.getElementById("address").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let dob = document.getElementById("dob").value;
+  let gender = document.getElementById("gender").value;
+  let userId = "";
+  let password = "";
+
+  if (category && name && address && email && dob && gender) {
+    if (category === "admin" && name.toLowerCase() !== "ganesh wagle") {
+      alert("Only Ganesh Wagle can sign up as Administrator!");
+      return;
+    }
+
+    // Generate ID and password based on category
+    if (category === "teacher") {
+      userId = "teacher" + Math.floor(Math.random() * 1000);
+      password = "teach" + Math.floor(Math.random() * 10000);
+    } else if (category === "student") {
+      userId = "student1" + Math.floor(Math.random() * 1000);
+      password = "stud" + Math.floor(Math.random() * 10000);
+    } else if (category === "admin") {
+      userId = "hero" + Math.floor(Math.random() * 1000);
+      password = "admin" + Math.floor(Math.random() * 10000);
+    }
+
+    document.getElementById("output").innerHTML = `
+      <strong>Account Created Successfully!</strong><br>
+      Category: <b>${category}</b><br>
+      User ID: <b>${userId}</b><br>
+      Password: <b>${password}</b>
+    `;
+  } else {
+    alert("Please fill up all fields!");
+  }
+});
+</script>
+</body>
+</html>

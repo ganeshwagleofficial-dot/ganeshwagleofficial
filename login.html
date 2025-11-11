@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<div class="container">
+<h1>Login</h1>
+<form id="loginForm">
+<label for="role">Select Category:</label>
+<select id="role" required>
+<option value="">--Select--</option>
+<option value="student">Student</option>
+<option value="teacher">Teacher</option>
+<option value="admin">Administrator</option>
+</select>
+<label for="loginId">User ID:</label>
+<input type="text" id="loginId" placeholder="Enter your ID" required>
+<label for="loginPassword">Password:</label>
+<input type="password" id="loginPassword" placeholder="Enter your password" required>
+<button type="submit">Login</button>
+<p>Don’t have an account? <a href="signup.html">Sign Up</a></p>
+</form>
+</div>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+e.preventDefault();
+let role = document.getElementById("role").value;
+let id = document.getElementById("loginId").value;
+let pass = document.getElementById("loginPassword").value;
+if(id !== "" && pass !== "" && role !== ""){
+window.location.href = "indexpage.html";
+}else{
+alert("Please fill all fields correctly!");
+}
+});
+</script>
+</body>
+</html>

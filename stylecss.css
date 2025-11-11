@@ -1,0 +1,121 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c2b;
+      color: white;
+    }
+
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background-color: #101020;
+      position: sticky;
+      top: 0;
+    }
+    .navbar h1 {
+      font-size: 22px;
+      color: #fff;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      margin-left: 20px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .navbar ul li a:hover {
+      color: #f54242;
+    } /* Skills Section */
+    .skills {
+        background: #6c5ce7;
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    .skills h2 {
+        margin-bottom: 30px;
+    }
+    .skill-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        
+    }
+    .skill {
+        background: white;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        width: 150px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 80px 50px;
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+    .hero-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+    .hero-text button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #f54242;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero-text button:hover {
+      background: #d32f2f;
+    }
+    .hero img {
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    
+    /* Zero Section */
+    .zero img {
+      width: 600px;
+      border-radius: 10px;
+    }
+
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #101020;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    
+</style>
